@@ -1,7 +1,10 @@
 package io.neetcode.singlylinkedlist;
 
+import io.neetcode.test.NeetcodeTestHarness;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
@@ -54,6 +57,15 @@ public class LinkedListTest {
         list.insertTail(2);
         assertThat(list.get(1), is(2));
         assertThat(list.get(0), is(1));
+    }
+
+    @Test
+    public void testWithHarness() throws IOException {
+        final String testScriptJson = "[\"insertTail\", 1, \"insertTail\", 2, \"get\", 1, \"remove\", 1, \"insertTail\", 2, \"get\", 1, \"get\", 0]";
+        final String expectationsJson = "[null,null,2,true,null,2,1]";
+
+        final LinkedList list = new LinkedList();
+        NeetcodeTestHarness.getInstance().runTest(list, testScriptJson, expectationsJson);
     }
 
     @DataProvider

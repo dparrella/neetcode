@@ -9,7 +9,7 @@ import java.util.Objects;
  * - Use a dummy node at the head and always keep it at the head.
 *  - This makes traversal, inserting, and removing much easier.
  */
-class LinkedList {
+public class LinkedList {
 
     private LinkedListNode head;
     private LinkedListNode tail;

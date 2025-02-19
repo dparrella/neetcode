@@ -1,4 +1,4 @@
-package doublylinkedlist;
+package io.neetcode.doublylinkedlist;
 
 import org.testng.annotations.Test;
 

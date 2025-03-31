@@ -29,4 +29,9 @@ public class StockSpanTest {
     public void calculateSpanNaive(final int[] input, final List<Integer> expectedResult) {
         assertThat(StockSpan.calculateSpanNaive(input), is(expectedResult));
     }
+
+    @Test(dataProvider = "spanProvider")
+    public void calculateSpanWithStack(final int[] input, final List<Integer> expectedResult) {
+        assertThat(StockSpan.calculateSpanWithStack(input), is(expectedResult));
+    }
 }
